@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hotel Bill</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-image: url('{{ url_for("static", filename="WEB_8.jpeg") }}');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: white;
+      margin: 40px;
+    }
+    .bill-box {
+      border: 1px solid #fff;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      width: 400px;
+      border-radius: 10px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 8px 12px;
+      background-color: yellow;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    a {
+      color: yellow;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="bill-box">
+    <h2>🏨 Hotel Paradise</h2>
+    <p><b>Booking ID:</b> {{ booking[0] }}</p>
+    <p><b>Name:</b> {{ booking[1] }}</p>
+    <p><b>Room No:</b> {{ booking[2] }}</p>
+    <p><b>Days Stayed:</b> {{ booking[3] }}</p>
+    <p><b>Amount:</b> ₹{{ booking[4] }}</p>
+    <hr>
+    <h3>Total Payable: ₹{{ booking[4] }}</h3>
+    <button onclick="window.print()">🧾 Print Bill</button>
+  </div>
+  <br>
+  <a href="/">⬅ Back</a>
+</body>
+</html>

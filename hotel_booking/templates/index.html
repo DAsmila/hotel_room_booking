@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hotel Bookings</title>
+  <style>
+    body {
+      font-family: Arial;
+      background-image: url('{{ url_for("static", filename="WEB_8.jpeg") }}');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      color: white;
+    }
+    table { background: rgba(0, 0, 0, 0.6); }
+    a, h2 { color: yellow; }
+  </style>
+</head>
+<body>
+  <h2>🏨 Hotel Room Bookings</h2>
+  <a href="/add">Add Booking</a>
+  <table border="1" cellpadding="5">
+    <tr><th>ID</th><th>Name</th><th>Room</th><th>Days</th><th>Amount</th><th>Action</th></tr>
+    {% for b in bookings %}
+      <tr>
+        <td>{{ b[0] }}</td><td>{{ b[1] }}</td><td>{{ b[2] }}</td>
+        <td>{{ b[3] }}</td><td>{{ b[4] }}</td>
+        <td>
+          <a href="/bill/{{ b[0] }}">Print Bill</a> |
+          <a href="/delete/{{ b[0] }}">Delete</a>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

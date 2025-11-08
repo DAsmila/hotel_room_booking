@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Booking</title>
+</head>
+<body>
+  <h2>Edit Booking</h2>
+  <form method="post">
+    Name: <input type="text" name="name" value="{{ booking[1] }}" required><br><br>
+    Room No: <input type="text" name="room" value="{{ booking[2] }}" required><br><br>
+    No. of Days: <input type="number" name="days" value="{{ booking[3] }}" required><br><br>
+    <button type="submit">Update</button>
+  </form>
+  <br>
+  <a href="/">Back</a>
+</body>
+</html>
